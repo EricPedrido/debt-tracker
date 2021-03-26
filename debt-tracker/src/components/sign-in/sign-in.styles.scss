@@ -1,0 +1,58 @@
+.main-container {
+  padding: 75px 60px 75px 60px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .sign-in-text {
+    margin-bottom: 50px;
+
+    .title-text {
+      color: #060072;
+      margin-bottom: 5px;
+    }
+
+    .subtitle-text {
+      padding: 0px 30px 0px 30px;
+      font-size: 15px;
+      font-style: italic;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .login-form {
+      width: 80%;
+    }
+  }
+
+  .button-bar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 30px;
+    height: 80px;
+
+    .register-container {
+      width: 30%;
+      margin-right: 20px;
+      height: auto;
+    }
+
+    .sign-in-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30%;
+      height: 80px;
+      margin-left: 20px;
+
+      .google-logo {
+        height: 15px;
+      }
+    }
+  }
+}

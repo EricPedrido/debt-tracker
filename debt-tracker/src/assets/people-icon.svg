@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="74px" height="74px" viewBox="0 0 74 74" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="filter_1">
+      <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.827451 0 0 0 0 0.827451 0 0 0 0 0.827451 0 0 0 1 0" />
+    </filter>
+    <path d="M0 0L74 0L74 74L0 74L0 0Z" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="people-icon--Pressed" filter="url(#filter_1)">
+    <g id="people-icon" filter="url(#filter_1)">
+      <path d="M0 0L74 0L74 74L0 74L0 0Z" id="Background" fill="none" fill-rule="evenodd" stroke="none" />
+      <g clip-path="url(#mask_1)">
+        <path d="M23.125 0C14.2092 0 6.9375 7.27173 6.9375 16.1875C6.9375 21.7249 9.75586 26.6389 14.0195 29.5566C5.74512 33.0796 0 41.2998 0 50.875L4.625 50.875C4.625 40.55 12.8 32.375 23.125 32.375C33.45 32.375 41.625 40.55 41.625 50.875L46.25 50.875C46.25 41.2998 40.5049 33.0796 32.2305 29.5566C36.4941 26.6389 39.3125 21.7249 39.3125 16.1875C39.3125 7.27173 32.0408 0 23.125 0L23.125 0ZM23.125 4.625C29.5386 4.625 34.6875 9.77393 34.6875 16.1875C34.6875 22.6011 29.5386 27.75 23.125 27.75C16.7114 27.75 11.5625 22.6011 11.5625 16.1875C11.5625 9.77393 16.7114 4.625 23.125 4.625L23.125 4.625Z" transform="translate(13.875 9.25)" id="Shape" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

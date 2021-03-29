@@ -50,8 +50,16 @@
       height: 80px;
       margin-left: 20px;
 
-      .google-logo {
-        height: 15px;
+      .alt-button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .logo {
+          height: 15px;
+          width: auto;
+          align-self: center;
+        }
       }
     }
   }

@@ -18,49 +18,4 @@
       font-style: italic;
     }
   }
-
-  .form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    .login-form {
-      width: 80%;
-    }
-  }
-
-  .button-bar {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin-top: 30px;
-    height: 80px;
-
-    .register-container {
-      width: 30%;
-      margin-right: 20px;
-      height: auto;
-    }
-
-    .sign-in-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30%;
-      height: 80px;
-      margin-left: 20px;
-
-      .alt-button-container {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-
-        .logo {
-          height: 15px;
-          width: auto;
-          align-self: center;
-        }
-      }
-    }
-  }
 }

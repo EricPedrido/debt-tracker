@@ -5,7 +5,10 @@
   justify-content: center;
 
   .sign-in-text {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
     .title-text {
       color: #060072;
@@ -16,6 +19,12 @@
       padding: 0px 30px 0px 30px;
       font-size: 15px;
       font-style: italic;
+    }
+
+    .sign-in-error {
+      margin-top: 10px;
+      color: red;
+      justify-self: flex-end;
     }
   }
 }

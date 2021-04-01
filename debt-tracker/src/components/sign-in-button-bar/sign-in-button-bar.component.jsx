@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
 
 import { Button, Divider } from "antd";
 
@@ -10,11 +9,9 @@ import { ReactComponent as FacebookLogo } from "../../assets/facebook-logo.svg";
 import { pressRegister, signUpStart } from "../../redux/user/user.action";
 
 import "./sign-in-button-bar.styles.scss";
-import { selectRegisterPressed } from "../../redux/user/user.selectors";
 
 const SignInButtonBar = ({
   pressRegister,
-  registerPressed,
   leftButtonText,
   rightButtonText,
   onFinish,
@@ -48,12 +45,8 @@ const SignInButtonBar = ({
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  registerPressed: selectRegisterPressed,
-});
-
 const mapDispatchToProps = (dispatch) => ({
   pressRegister: () => dispatch(pressRegister()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignInButtonBar);
+export default connect(null, mapDispatchToProps)(SignInButtonBar);

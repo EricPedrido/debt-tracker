@@ -1,25 +1,22 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
+import React from "react";
 
 import { Button, Divider } from "antd";
 
 import { ReactComponent as GoogleLogo } from "../../assets/google-logo.svg";
 import { ReactComponent as FacebookLogo } from "../../assets/facebook-logo.svg";
 
-import { pressRegister, signUpStart } from "../../redux/user/user.action";
-
 import "./sign-in-button-bar.styles.scss";
 
 const SignInButtonBar = ({
-  pressRegister,
   leftButtonText,
   rightButtonText,
-  onFinish,
+  rightOnClick,
+  leftOnClick,
 }) => {
   return (
     <div className='button-bar'>
       <div className='left-container'>
-        <Button onClick={pressRegister} block='true'>
+        <Button onClick={leftOnClick} block='true'>
           {leftButtonText}
         </Button>
       </div>
@@ -32,7 +29,7 @@ const SignInButtonBar = ({
           block='true'
           type='primary'
           htmlType='submit'
-          onClick={onFinish}
+          onClick={rightOnClick}
         >
           {rightButtonText}
         </Button>
@@ -45,8 +42,4 @@ const SignInButtonBar = ({
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  pressRegister: () => dispatch(pressRegister()),
-});
-
-export default connect(null, mapDispatchToProps)(SignInButtonBar);
+export default SignInButtonBar;

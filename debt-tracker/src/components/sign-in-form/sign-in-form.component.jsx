@@ -7,16 +7,25 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 import SignInButtonBar from "../sign-in-button-bar/sign-in-button-bar.component";
 
-import { emailSignInStart, signUpStart } from "../../redux/user/user.action";
+import {
+  emailSignInStart,
+  signUpStart,
+  pressRegister,
+} from "../../redux/user/user.action";
 import { selectRegisterPressed } from "../../redux/user/user.selectors";
 
 import "./sign-in-form.styles.scss";
 
 // TODO allow for sign in USING REDUX SAGA
 
-var PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+var PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&()])[A-Za-z\d@$!%*?&]{8,}$/; // min 8, uppercase/lowercase, numbers, special characters
 
-const SignInForm = ({ emailSignInStart, registerPressed, signUpStart }) => {
+const SignInForm = ({
+  emailSignInStart,
+  registerPressed,
+  signUpStart,
+  pressRegister,
+}) => {
   const formRef = React.createRef();
 
   useEffect(() => {
@@ -116,11 +125,13 @@ const SignInForm = ({ emailSignInStart, registerPressed, signUpStart }) => {
             <SignInButtonBar
               leftButtonText='Cancel'
               rightButtonText='Confirm'
+              leftOnClick={pressRegister}
             />
           ) : (
             <SignInButtonBar
               leftButtonText='Register'
               rightButtonText='Sign in'
+              leftOnClick={pressRegister}
             />
           )}
         </Form.Item>
@@ -137,6 +148,7 @@ const mapDispatchToProps = (dispatch) => ({
   emailSignInStart: (userCredentials) =>
     dispatch(emailSignInStart(userCredentials)),
   signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials)),
+  pressRegister: () => dispatch(pressRegister()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);

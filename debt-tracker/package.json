@@ -11,6 +11,7 @@
     "amazon-cognito-identity-js": "^4.6.0",
     "antd": "^4.14.1",
     "craco-less": "^1.17.1",
+    "dotenv": "^8.2.0",
     "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -47,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "aws-sdk": "^2.880.0",
     "redux-logger": "^3.0.6"
   }
 }

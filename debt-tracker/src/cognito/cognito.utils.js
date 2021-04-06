@@ -1,22 +1,26 @@
 import {
   CognitoUserPool,
   CognitoUser,
-  AuthenticationDetails
+  AuthenticationDetails,
 } from "amazon-cognito-identity-js";
 
 const poolData = {
-  UserPoolId: "ap-southeast-2_rYka5uhSD",
-  ClientId: "34ks43533iad3v9j1i3hbmkdm4",
+  UserPoolId: "ap-southeast-2_zm1Juk8zH",
+  ClientId: "6i0mtktogmak7182inbre2hafi",
 };
 
 const UserPool = new CognitoUserPool(poolData);
 
-export const cognitoSignUp = (email, password) => {
-  UserPool.signUp(email, password, [], null, (err, data) => {
-    if (err) console.error(err);
-    console.log(data);
+export const cognitoSignUp = async (email, password) =>
+  await new Promise((resolve, reject) => {
+    UserPool.signUp(email, password, [], null, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
   });
-};
 
 export const cognitoAuthenticateUser = async (Username, Password) =>
   await new Promise((resolve, reject) => {
@@ -43,7 +47,7 @@ export const cognitoAuthenticateUser = async (Username, Password) =>
     });
   });
 
-export const getCurrentUserSession = async () => 
+export const getCurrentUserSession = async () =>
   await new Promise((resolve, reject) => {
     const user = UserPool.getCurrentUser();
 
@@ -59,7 +63,6 @@ export const getCurrentUserSession = async () =>
       reject();
     }
   });
-;
 
 export const cognitoSignOut = () => {
   const user = UserPool.getCurrentUser();

@@ -1,4 +1,4 @@
-import UserActionTypes from './user.types';
+import UserActionTypes from "./user.types";
 
 export const pressRegister = () => ({
   type: UserActionTypes.REGISTER_PRESSED,
@@ -37,9 +37,9 @@ export const signUpStart = (userCredentials) => ({
   payload: userCredentials,
 });
 
-export const signUpSuccess = ({ user, additionalData }) => ({
+export const signUpSuccess = (userCredentials) => ({
   type: UserActionTypes.SIGN_UP_SUCCESS,
-  payload: { user, additionalData },
+  payload: userCredentials,
 });
 
 export const signUpFailure = (error) => ({
@@ -47,7 +47,6 @@ export const signUpFailure = (error) => ({
   payload: error,
 });
 
-export const checkUserSession = (currentUser) => ({
+export const checkUserSession = () => ({
   type: UserActionTypes.CHECK_USER_SESSION,
-  payload: currentUser
 });

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -14,32 +14,45 @@ import {
 
 import "./sign-in.styles.scss";
 
+const REGISTER_TEXT = "Register Here";
+const REGISTER_SUBTEXT = "A verification code will be sent to your email";
+
+const SIGN_IN_TEXT = "Please Sign in to Continue";
+const SIGN_IN_SUBTEXT =
+  "Signing in is necessary for us to keep track of your debts. If you don't have an account, register now and manage those debts, it' free!";
+
 const SignIn = ({ registerPressed, signInSignUpError }) => {
+  const titleText = () => {
+    if (registerPressed) {
+      return REGISTER_TEXT;
+    } else {
+      return SIGN_IN_TEXT;
+    }
+  };
+
+  const subText = () => {
+    if (registerPressed) {
+      return REGISTER_SUBTEXT;
+    } else {
+      return SIGN_IN_SUBTEXT;
+    }
+  };
+
   return (
     <div>
       <MainContainer className='main-container'>
-        {registerPressed ? (
-          <div className='sign-in-text'>
-            <Typography.Title className='title-text'>
-              Register Here
-            </Typography.Title>
-          </div>
-        ) : (
-          <div className='sign-in-text'>
-            <Typography.Title className='title-text'>
-              Please Sign in to Continue
-            </Typography.Title>
-            <Typography.Text className='subtitle-text'>
-              Signing in is necessary for us to keep track of your debts. If you
-              don't have an account, register now and manage those debts, it's
-              free!
-            </Typography.Text>
-            {signInSignUpError && (
-              <Typography.Text className='sign-in-error' type={"danger"}>
-                {signInSignUpError.message}
-              </Typography.Text>
-            )}
-          </div>
+        <div className='sign-in-text'>
+          <Typography.Title className='title-text'>
+            {titleText()}
+          </Typography.Title>
+          <Typography.Text className='subtitle-text'>
+            {subText()}
+          </Typography.Text>
+        </div>
+        {signInSignUpError && (
+          <Typography.Text className='sign-in-error' type={"danger"}>
+            {signInSignUpError.message}
+          </Typography.Text>
         )}
         <SignInForm />
       </MainContainer>

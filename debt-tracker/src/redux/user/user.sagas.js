@@ -20,9 +20,11 @@ import {
 
 export function* signUp({ payload: { email, password } }) {
   try {
-    cognitoSignUp(email, password);
+    yield cognitoSignUp(email, password);
     //TODO onSignUpSuccess to signInAfterSignUp
+    yield put(signUpSuccess({ email, password }));
   } catch (error) {
+    console.log(error);
     yield put(signUpFailure(error));
   }
 }
@@ -52,16 +54,16 @@ export function* emailSignIn({ payload: { email, password } }) {
 export function* isUserAuthenticated() {
   try {
     const session = yield getCurrentUserSession()
-    .then((session) => {
-      return session;
-    })
-    .catch((err) => {
-      throw err;
-    });
+      .then((session) => {
+        return session;
+      })
+      .catch((err) => {
+        throw err;
+      });
 
     yield put(signInSuccess(session.accessToken.payload));
   } catch (error) {
-    yield put(signInFailure(error))
+    yield put(signInFailure(error));
   }
 }
 
@@ -81,11 +83,16 @@ export function* onCheckUserSession() {
   yield takeLatest(UserActionTypes.CHECK_USER_SESSION, isUserAuthenticated);
 }
 
+export function* onSignUpSuccess() {
+  yield takeLatest(UserActionTypes.SIGN_UP_SUCCESS, emailSignIn);
+}
+
 export function* userSagas() {
   yield all([
     call(onSignUpStart),
     call(onEmailSignInStart),
     call(onSignOutStart),
     call(onCheckUserSession),
+    call(onSignUpSuccess),
   ]);
 }

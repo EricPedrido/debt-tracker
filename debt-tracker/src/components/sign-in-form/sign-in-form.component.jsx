@@ -11,12 +11,10 @@ import {
   emailSignInStart,
   signUpStart,
   pressRegister,
-} from "../../redux/user/user.action";
+} from "../../redux/user/user.actions";
 import { selectRegisterPressed } from "../../redux/user/user.selectors";
 
 import "./sign-in-form.styles.scss";
-
-// TODO allow for sign in USING REDUX SAGA
 
 var PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&()])[A-Za-z\d@$!%*?&]{8,}$/; // min 8, uppercase/lowercase, numbers, special characters
 
@@ -32,7 +30,7 @@ const SignInForm = ({
     if (formRef) {
       formRef.current.resetFields();
     }
-  }, [registerPressed]);
+  }, [registerPressed, formRef]);
 
   const onFinish = (values) => {
     if (registerPressed) {

@@ -7,7 +7,7 @@ import {
   signInFailure,
   signInSuccess,
   signOutSuccess,
-} from "./user.action";
+} from "./user.actions";
 
 import {
   cognitoAuthenticateUser,

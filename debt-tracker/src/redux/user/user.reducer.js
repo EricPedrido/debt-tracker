@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   toVerify: null,
 };
 
-const userReducer = (state = INITIAL_STATE, action) => {
+const UserReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case UserActionTypes.REGISTER_PRESSED:
       return {
@@ -39,4 +39,4 @@ const userReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default userReducer;
+export default UserReducer;

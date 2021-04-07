@@ -10,7 +10,7 @@ import Header from "./components/header/header.component";
 import SignIn from "./components/sign-in/sign-in.component";
 import HomePage from "./pages/homepage/homepage.component";
 
-import { checkUserSession } from "./redux/user/user.action";
+import { checkUserSession } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 
 const App = ({ checkUserSession, currentUser }) => {

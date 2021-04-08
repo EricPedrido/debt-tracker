@@ -13,6 +13,11 @@ import {
   selectShowDebtees,
   selectShowDebtors,
 } from "../../redux/people/people.selectors";
+import { selectItems, selectPayments } from "../../redux/items/items.actions";
+import {
+  selectShowItems,
+  selectShowPayments,
+} from "../../redux/items/items.selectors";
 
 import "./homepage.styles.scss";
 
@@ -21,8 +26,12 @@ const HomePage = ({
   debtorsSelected,
   selectDebtees,
   selectDebtors,
+  itemsSelected,
+  paymentsSelected,
+  selectItems,
+  selectPayments,
 }) => (
-  <div>
+  <div className='homepage'>
     <MainContainer />
     <SidePanel
       leftText='Debtees'
@@ -32,17 +41,29 @@ const HomePage = ({
       selectLeft={selectDebtees}
       selectRight={selectDebtors}
     />
+    <SidePanel
+      leftText='Items'
+      rightText='Payments'
+      leftSelected={itemsSelected}
+      rightSelected={paymentsSelected}
+      selectLeft={selectItems}
+      selectRight={selectPayments}
+    />
   </div>
 );
 
 const mapStateToProps = createStructuredSelector({
   debteesSelected: selectShowDebtees,
   debtorsSelected: selectShowDebtors,
+  itemsSelected: selectShowItems,
+  paymentsSelected: selectShowPayments,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   selectDebtees: () => dispatch(selectDebtees()),
   selectDebtors: () => dispatch(selectDebtors()),
+  selectItems: () => dispatch(selectItems()),
+  selectPayments: () => dispatch(selectPayments()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

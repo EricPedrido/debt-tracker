@@ -7,7 +7,7 @@ import "antd/dist/antd.less";
 import "./App.less";
 
 import Header from "./components/header/header.component";
-import SignIn from "./components/sign-in/sign-in.component";
+import SignInAndRegister from "./pages/sign-in-and-register/sign-in-and-register.component";
 import HomePage from "./pages/homepage/homepage.component";
 
 import { checkUserSession } from "./redux/user/user.actions";
@@ -32,7 +32,9 @@ const App = ({ checkUserSession, currentUser }) => {
         <Route
           exact
           path='/signin'
-          render={() => (currentUser ? <Redirect to='/' /> : <SignIn />)}
+          render={() =>
+            currentUser ? <Redirect to='/' /> : <SignInAndRegister />
+          }
         />
       </Switch>
     </div>

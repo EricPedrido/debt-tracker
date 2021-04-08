@@ -1,48 +1,46 @@
 import React from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+
+import InfiniteScroll from "react-infinite-scroller";
+import { Button, List, Typography } from "antd";
+import { PlusOutlined, EditOutlined } from "@ant-design/icons";
 
 import PanelHeader from "../panel-header/panel-header.component";
 
-import {
-  selectDebtees,
-  selectDebtors,
-} from "../../redux/people/people.actions";
-import {
-  selectShowDebtees,
-  selectShowDebtors,
-} from "../../redux/people/people.selectors";
-
 import "./side-panel.styles.scss";
+import { Input, Dropdown } from "antd";
 
 const SidePanel = ({
-  debteesSelected,
-  debtorsSelected,
-  selectDebtees,
-  selectDebtors,
+  leftText,
+  rightText,
+  leftSelected,
+  rightSelected,
+  selectLeft,
+  selectRight,
 }) => (
   <div className='side-panel'>
-    <PanelHeader
-      panelText='Debtees'
-      selected={debteesSelected}
-      onClick={selectDebtees}
-    />
-    <PanelHeader
-      panelText='Debtors'
-      selected={debtorsSelected}
-      onClick={selectDebtors}
-    />
+    <div className='panel-headers'>
+      <PanelHeader
+        panelText={leftText}
+        selected={leftSelected}
+        onClick={selectLeft}
+      />
+      <PanelHeader
+        panelText={rightText}
+        selected={rightSelected}
+        onClick={selectRight}
+      />
+    </div>
+    <Input className='search-bar' placeholder='Search' />
+    <div className='panel-list'></div>
+    <div className='button-bar'>
+      <Button className='round-button' type='primary' shape='round'>
+        {<EditOutlined className='plus-icon' />}
+      </Button>
+      <Button className='round-button' type='primary' shape='round'>
+        {<PlusOutlined className='plus-icon' />}
+      </Button>
+    </div>
   </div>
 );
 
-const mapStateToProps = createStructuredSelector({
-  debteesSelected: selectShowDebtees,
-  debtorsSelected: selectShowDebtors,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  selectDebtees: () => dispatch(selectDebtees()),
-  selectDebtors: () => dispatch(selectDebtors()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SidePanel);
+export default SidePanel;

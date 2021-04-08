@@ -1,0 +1,12 @@
+.background {
+  background-color: #d3d3d3;
+  height: calc(100vh - 65px);
+  width: 100vw;
+
+  .main-container {
+    padding: 75px 60px 75px 60px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

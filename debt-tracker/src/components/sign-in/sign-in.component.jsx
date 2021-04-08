@@ -19,7 +19,7 @@ const REGISTER_SUBTEXT = "A verification code will be sent to your email";
 
 const SIGN_IN_TEXT = "Please Sign in to Continue";
 const SIGN_IN_SUBTEXT =
-  "Signing in is necessary for us to keep track of your debts. If you don't have an account, register now and manage those debts, it' free!";
+  "Signing in is necessary for us to keep track of your debts. If you don't have an account, register now and manage those debts, it's free!";
 
 const SignIn = ({ registerPressed, signInSignUpError }) => {
   const titleText = () => {
@@ -40,22 +40,18 @@ const SignIn = ({ registerPressed, signInSignUpError }) => {
 
   return (
     <div>
-      <MainContainer className='main-container'>
-        <div className='sign-in-text'>
-          <Typography.Title className='title-text'>
-            {titleText()}
-          </Typography.Title>
-          <Typography.Text className='subtitle-text'>
-            {subText()}
-          </Typography.Text>
-        </div>
-        {signInSignUpError && (
-          <Typography.Text className='sign-in-error' type={"danger"}>
-            {signInSignUpError.message}
-          </Typography.Text>
-        )}
-        <SignInForm />
-      </MainContainer>
+      <div className='sign-in-text'>
+        <Typography.Title className='title-text'>
+          {titleText()}
+        </Typography.Title>
+        <Typography.Text className='subtitle-text'>{subText()}</Typography.Text>
+      </div>
+      {signInSignUpError && (
+        <Typography.Text className='sign-in-error' type={"danger"}>
+          {signInSignUpError.message}
+        </Typography.Text>
+      )}
+      <SignInForm />
     </div>
   );
 };

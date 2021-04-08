@@ -1,6 +1,6 @@
 import React from "react";
 
-import InfiniteScroll from "react-infinite-scroller";
+import InfiniteScroll from "react-infinite-scroller"; // TODO populate list from s3 bucket
 import { Button, List, Typography } from "antd";
 import { PlusOutlined, EditOutlined } from "@ant-design/icons";
 
@@ -34,10 +34,10 @@ const SidePanel = ({
     <div className='panel-list'></div>
     <div className='button-bar'>
       <Button className='round-button' type='primary' shape='round'>
-        {<EditOutlined className='plus-icon' />}
+        {<EditOutlined className='icon' />}
       </Button>
       <Button className='round-button' type='primary' shape='round'>
-        {<PlusOutlined className='plus-icon' />}
+        {<PlusOutlined className='icon' />}
       </Button>
     </div>
   </div>

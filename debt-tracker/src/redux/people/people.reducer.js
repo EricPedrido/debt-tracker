@@ -3,6 +3,7 @@ import PeopleActionTypes from "./people.types";
 const INITIAL_STATE = {
   showDebtees: true,
   showDebtors: false,
+  expand: false,
 };
 
 const PeopleReducer = (state = INITIAL_STATE, action) => {
@@ -18,6 +19,12 @@ const PeopleReducer = (state = INITIAL_STATE, action) => {
         ...state,
         showDebtees: false,
         showDebtors: true,
+      };
+
+    case PeopleActionTypes.TOGGLE_EXPAND:
+      return {
+        ...state,
+        expand: !state.expand,
       };
     default:
       return state;

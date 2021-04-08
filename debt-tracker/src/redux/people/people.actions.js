@@ -7,3 +7,7 @@ export const selectDebtees = () => ({
 export const selectDebtors = () => ({
   type: PeopleActionTypes.DEBTORS_SELECTED,
 });
+
+export const togglePeopleExpand = () => ({
+  type: PeopleActionTypes.TOGGLE_EXPAND,
+});

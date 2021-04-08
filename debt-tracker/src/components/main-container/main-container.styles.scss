@@ -3,7 +3,37 @@
   height: calc(100vh - 65px);
   background: #e6e6e6;
   box-shadow: 0px 0px 30px 1px rgba(100, 100, 100, 0.5);
-  position: absolute;
+  position: fixed;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10000;
+}
+
+.expand-people {
+  animation: expandpeopleanimation 0.5s;
+  animation-fill-mode: forwards;
+}
+// TODO: STOP ANIMATION FROM PLAYING ON LOAD
+
+.reverse-people {
+  animation: contractpeopleanimation 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes expandpeopleanimation {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes contractpeopleanimation {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

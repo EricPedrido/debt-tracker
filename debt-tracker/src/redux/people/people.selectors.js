@@ -11,3 +11,8 @@ export const selectShowDebtors = createSelector(
   [selectPeople],
   (people) => people.showDebtors
 );
+
+export const selectPeopleExpand = createSelector(
+  [selectPeople],
+  (people) => people.expand
+);

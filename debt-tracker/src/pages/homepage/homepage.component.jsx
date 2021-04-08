@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import MainContainer from "../../components/main-container/main-container.component";
+import DebtInfo from "../../components/debt-info/debt-info.component";
 import SidePanel from "../../components/side-panel/side-panel.components";
 
 import {
@@ -32,7 +33,9 @@ const HomePage = ({
   selectPayments,
 }) => (
   <div className='homepage'>
-    <MainContainer />
+    <MainContainer>
+      <DebtInfo />
+    </MainContainer>
     <SidePanel
       leftText='Debtees'
       rightText='Debtors'

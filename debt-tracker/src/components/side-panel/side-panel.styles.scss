@@ -9,10 +9,6 @@
     display: flex;
   }
 
-  .search-bar {
-    box-shadow: inset 0px 0px 5px 1px rgba(100, 100, 100, 0.3);
-  }
-
   .panel-list {
     height: 100%;
   }
@@ -36,7 +32,7 @@
       box-shadow: 4px 3px 4px 0px rgba(100, 100, 100, 0.5);
       margin-right: 15px;
 
-      .plus-icon {
+      .icon {
         font-size: 30px;
       }
     }

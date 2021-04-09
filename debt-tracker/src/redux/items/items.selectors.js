@@ -11,3 +11,9 @@ export const selectShowPayments = createSelector(
   [selectItems],
   (items) => items.showPayments
 );
+
+export const selectItemsExpand = createSelector(
+  [selectItems],
+  (items) => items.expand
+);
+

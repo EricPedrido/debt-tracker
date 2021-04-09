@@ -9,7 +9,6 @@ import { TeamOutlined, LogoutOutlined } from "@ant-design/icons";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 import { signOutStart } from "../../redux/user/user.actions";
-
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 import "./header.styles.scss";

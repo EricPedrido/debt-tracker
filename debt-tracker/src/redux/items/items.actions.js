@@ -7,3 +7,11 @@ export const selectItems = () => ({
 export const selectPayments = () => ({
   type: ItemActionTypes.PAYMENTS_SELECTED,
 });
+
+export const toggleItemsExpand = () => ({
+  type: ItemActionTypes.TOGGLE_EXPAND,
+});
+
+export const resetItemsExpand = () => ({
+  type: ItemActionTypes.RESET_EXPAND,
+})

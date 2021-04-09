@@ -10,17 +10,26 @@
 }
 
 .expand-people {
-  animation: expandpeopleanimation 0.5s;
+  animation: expandPeopleAnimation 0.5s;
   animation-fill-mode: forwards;
 }
-// TODO: STOP ANIMATION FROM PLAYING ON LOAD
 
 .reverse-people {
-  animation: contractpeopleanimation 0.5s;
+  animation: contractPeopleAnimation 0.5s;
   animation-fill-mode: forwards;
 }
 
-@keyframes expandpeopleanimation {
+.expand-items {
+  animation: expandItemsAnimation 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.reverse-items {
+  animation: contractItemsAnimation 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes expandPeopleAnimation {
   from {
     transform: translateX(-50%);
   }
@@ -29,9 +38,27 @@
   }
 }
 
-@keyframes contractpeopleanimation {
+@keyframes contractPeopleAnimation {
   from {
     transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes expandItemsAnimation {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes contractItemsAnimation {
+  from {
+    transform: translateX(-100%);
   }
   to {
     transform: translateX(-50%);

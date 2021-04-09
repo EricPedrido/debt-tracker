@@ -27,14 +27,40 @@
 
     .round-button {
       justify-content: center;
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       box-shadow: 4px 3px 4px 0px rgba(100, 100, 100, 0.5);
       margin-right: 15px;
 
       .icon {
-        font-size: 30px;
+        font-size: 25px;
       }
     }
+  }
+}
+
+.expand-animation {
+  animation: expandAnimation 0.5s forwards;
+}
+
+.reverse-animation {
+  animation: contractAnimation 0.5s forwards;
+}
+
+@keyframes expandAnimation {
+  from {
+    width: 25%;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes contractAnimation {
+  from {
+    width: 50%;
+  }
+  to {
+    width: 25%;
   }
 }

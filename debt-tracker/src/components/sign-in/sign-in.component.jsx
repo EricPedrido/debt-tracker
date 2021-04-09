@@ -4,7 +4,6 @@ import { createStructuredSelector } from "reselect";
 
 import { Typography } from "antd";
 
-import MainContainer from "../main-container/main-container.component";
 import SignInForm from "../sign-in-form/sign-in-form.component";
 
 import {

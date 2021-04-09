@@ -8,6 +8,7 @@ import {
   signInSuccess,
   signOutSuccess,
 } from "./user.actions";
+import { resetPeopleExpand } from "../people/people.actions"
 
 import {
   cognitoAuthenticateUser,
@@ -16,12 +17,9 @@ import {
   cognitoSignOut,
 } from "../../cognito/cognito.utils";
 
-// TODO // SIGN INS // SIGN IN AFTER SIGN UP
-
 export function* signUp({ payload: { email, password } }) {
   try {
     yield cognitoSignUp(email, password);
-    //TODO onSignUpSuccess to signInAfterSignUp
     yield put(signUpSuccess({ email, password }));
   } catch (error) {
     console.log(error);
@@ -31,6 +29,7 @@ export function* signUp({ payload: { email, password } }) {
 
 export function* signOut() {
   cognitoSignOut();
+  yield put(resetPeopleExpand());
   yield put(signOutSuccess());
 }
 

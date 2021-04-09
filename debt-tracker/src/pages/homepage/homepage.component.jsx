@@ -5,6 +5,7 @@ import { createStructuredSelector } from "reselect";
 import MainContainer from "../../components/main-container/main-container.component";
 import DebtInfo from "../../components/debt-info/debt-info.component";
 import SidePanel from "../../components/side-panel/side-panel.components";
+import SidePanelTypes from "../../components/side-panel/side-panel.types";
 
 import {
   selectDebtees,
@@ -37,6 +38,7 @@ const HomePage = ({
       <DebtInfo />
     </MainContainer>
     <SidePanel
+      id={SidePanelTypes.PEOPLE_PANEL}
       leftText='Debtees'
       rightText='Debtors'
       leftSelected={debteesSelected}
@@ -45,6 +47,7 @@ const HomePage = ({
       selectRight={selectDebtors}
     />
     <SidePanel
+      id={SidePanelTypes.ITEM_PANEL}
       leftText='Items'
       rightText='Payments'
       leftSelected={itemsSelected}

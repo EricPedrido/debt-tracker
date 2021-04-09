@@ -11,3 +11,7 @@ export const selectDebtors = () => ({
 export const togglePeopleExpand = () => ({
   type: PeopleActionTypes.TOGGLE_EXPAND,
 });
+
+export const resetPeopleExpand = () => ({
+  type: PeopleActionTypes.RESET_EXPAND,
+})
